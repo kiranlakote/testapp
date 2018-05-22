@@ -4,11 +4,11 @@ class EmployeeController < ApplicationController
     @employeedetails = Employeedetails.new
   end
   def show
-    
+    @employeedetails = Employee.all
   end
 
   def add
-  	@employeedetails = Employeedetails.new(params[:employee])
+  	@employeedetails = Employeedetails.new(params[:employeedetails])
     if @employeedetails.save
       redirect_to @employeedetails, :notice => "Successfully created employee."
     else
@@ -20,7 +20,7 @@ class EmployeeController < ApplicationController
   end
 
   def details
-    @employeedetails = Employeedetails.find(params[:id])
+    
   end
 
   def delete_employee
