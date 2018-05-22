@@ -1,0 +1,8 @@
+<% if current_user %>
+	<h1> Welcome </h1>
+	<%= link_to 'Create Employee',  employee_index_path %><br>
+	<%= link_to 'Attendance', attendance_attendance_path %>
+	
+<% else %>
+    <h1> please login </h1>
+<% end %>
