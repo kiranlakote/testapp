@@ -8,8 +8,8 @@ class EmployeeController < ApplicationController
   end
 
   def add
-  	@employeedetail = Employeedetail.new(params[:employeedetails])
-    if @employeedetails.save
+    @employeedetail = Employeedetail.new(params[:employeedetail])
+    if @employeedetail.save
       redirect_to employee_show_path, :notice => "Successfully created employee."
     else
       render :action => 'new'
@@ -23,6 +23,6 @@ class EmployeeController < ApplicationController
     
   end
 
-  def delete_employee
+  def delete
   end
 end
