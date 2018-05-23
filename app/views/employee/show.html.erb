@@ -1,2 +1,14 @@
-
-<%= @employeedetails.first_name %>
+<h1>Employee Details</h1>
+<% if current_user %>
+	<% @employeedetails.each do |x| %>
+		<div >
+			
+			<%= x.first_name %>
+			<%= x.last_name %>
+			<%= x.gender %>
+			<%= x.hire_date %>
+		</div>
+	<% end %>
+<% else %>
+    <h1> please login </h1>
+<% end %>

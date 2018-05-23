@@ -1,16 +1,16 @@
 class EmployeeController < ApplicationController
   
   def new
-    @employeedetails = Employeedetails.new
+    @employeedetail = Employeedetail.new
   end
   def show
-    @employeedetails = Employee.all
+    @employeedetails = Employeedetail.all
   end
 
   def add
-  	@employeedetails = Employeedetails.new(params[:employeedetails])
+  	@employeedetail = Employeedetail.new(params[:employeedetails])
     if @employeedetails.save
-      redirect_to @employeedetails, :notice => "Successfully created employee."
+      redirect_to employee_show_path, :notice => "Successfully created employee."
     else
       render :action => 'new'
     end
